@@ -65,9 +65,7 @@ export function TimerView() {
   return (
     <div className="flex-1 flex flex-col gap-2 bg-purple-600 rounded p-2">
       <TimerForm timer={selectedTimer} saveTimer={handleSaveTimer} />
-      {timers.length > 0 && (
-        <div className="flex justify-center font-bold text-white">Timers</div>
-      )}
+      <div className="flex justify-center font-bold text-white">Timers</div>
       {timers.map((timer) => (
         <Timer
           key={timer.id}

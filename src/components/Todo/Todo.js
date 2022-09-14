@@ -1,48 +1,22 @@
-import { format, formatDuration, intervalToDuration } from "date-fns";
-import { useEffect, useState } from "react";
+import { format } from "date-fns";
 
-function TimeLeft({ timer, deleteTimer }) {
-  const [now, setNow] = useState(Date.now());
-  const { time: endTime } = timer;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (now >= endTime) {
-        clearInterval(interval);
-        if (!timer.deleted) deleteTimer(timer, true);
-      } else {
-        setNow(Date.now());
-      }
-    }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [endTime]);
-
+export function Todo({ todo, setSelectedTodo, deleteTodo }) {
   return (
-    <div className="font-normal text-xs">
-      {now < endTime
-        ? formatDuration(intervalToDuration({ start: now, end: endTime }))
-        : "Time Over - please delete it"}{" "}
-      ({format(endTime, "dd-MMM-yyyy HH:mm a")})
-    </div>
-  );
-}
-
-export function Timer({ timer, setSelectedTimer, deleteTimer }) {
-  return (
-    <div className="rounded border-2 border-white p-2 text-white font-bold flex">
+    <div className="rounded border-2 border-white p-2 text-white font-bold flex align-center">
+      <button></button>
       <div className="flex-1">
-        {timer.title}
+        {todo.title}
         <br />
-        <TimeLeft timer={timer} deleteTimer={deleteTimer} />
+        <div className="font-normal text-xs">
+          {format(todo.id, "dd-MMM-yyyy HH:mm a")}
+        </div>
       </div>
 
       <div className="flex items-center pl-2 gap-2">
-        {!timer?.deleted && (
+        {!todo?.deleted && (
           <button
             onClick={() => {
-              setSelectedTimer(timer);
+              setSelectedTodo(todo);
             }}
             data-case="Edit"
             className="flex-1 flex justify-end text-white hover:text-black"
@@ -66,7 +40,7 @@ export function Timer({ timer, setSelectedTimer, deleteTimer }) {
         <button
           data-case="Delete"
           onClick={() => {
-            deleteTimer(timer);
+            deleteTodo(todo);
           }}
           className="flex-1 flex justify-end text-white hover:text-black"
         >
