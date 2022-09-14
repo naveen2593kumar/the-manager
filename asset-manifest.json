@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/the-manager/static/css/main.a2a8ed10.css",
+    "main.js": "/the-manager/static/js/main.2933a440.js",
+    "static/js/787.c2ab15be.chunk.js": "/the-manager/static/js/787.c2ab15be.chunk.js",
+    "index.html": "/the-manager/index.html",
+    "main.a2a8ed10.css.map": "/the-manager/static/css/main.a2a8ed10.css.map",
+    "main.2933a440.js.map": "/the-manager/static/js/main.2933a440.js.map",
+    "787.c2ab15be.chunk.js.map": "/the-manager/static/js/787.c2ab15be.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2a8ed10.css",
+    "static/js/main.2933a440.js"
+  ]
+}
