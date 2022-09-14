@@ -8,7 +8,7 @@ export function Todo({ todo, setSelectedTodo, deleteTodo }) {
         {todo.title}
         <br />
         <div className="font-normal text-xs">
-          {format(todo.id, "dd-MMM-yyyy HH:mm a")}
+          {format(todo.id, "dd-MMM-yyyy hh:mm a")}
         </div>
       </div>
 

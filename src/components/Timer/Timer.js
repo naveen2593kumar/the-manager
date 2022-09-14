@@ -24,7 +24,7 @@ function TimeLeft({ timer, deleteTimer }) {
       {now < endTime
         ? formatDuration(intervalToDuration({ start: now, end: endTime }))
         : "Time Over - please delete it"}{" "}
-      ({format(endTime, "dd-MMM-yyyy HH:mm a")})
+      ({format(endTime, "dd-MMM-yyyy hh:mm a")})
     </div>
   );
 }
